@@ -149,3 +149,23 @@ ros topic required by rtabmap:
 [rtabma Advanced Parameter Tuning Tutorial](http://wiki.ros.org/rtabmap_ros/Tutorials/Advanced%20Parameter%20Tuning)
 
 [List of RTAB-Map Parameters](https://github.com/introlab/rtabmap/blob/master/corelib/include/rtabmap/core/Parameters.h)
+
+## RTAB-Map Real Time Visualization
+rtabmapviz, which is an additional node for real time visualization of feature mapping, loop closures, and more. It’s not recommended to use this tool while mapping in simulation due to the computing overhead. rtabmapviz is great to deploy on a real robot during live mapping to ensure that you are getting the necessary features to complete loop closures.
+
+
+To enable it for mapping, add this code snippet to the `mapping.launch` file. This will launch the rtabmapviz GUI and provide you with realtime feature detection, loop closures, and other relevant information to the mapping process.
+
+```xml
+<!-- visualization with rtabmapviz -->
+    <node pkg="rtabmap_ros" type="rtabmapviz" name="rtabmapviz" args="-d $(find rtabmap_ros)/launch/config/rgbd_gui.ini" output="screen">
+        <param name="subscribe_depth"             type="bool" value="true"/>
+        <param name="subscribe_scan"              type="bool" value="true"/>
+        <param name="frame_id"                    type="string" value="base_footprint"/>
+
+        <remap from="rgb/image"       to="$(arg rgb_topic)"/>
+        <remap from="depth/image"     to="$(arg depth_topic)"/>
+        <remap from="rgb/camera_info" to="$(arg camera_info_topic)"/>
+        <remap from="scan"            to="/scan"/>
+    </node>
+```
