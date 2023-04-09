@@ -144,3 +144,7 @@ ros topic required by rtabmap:
   </group>
 </launch>
 ```
+
+### Reference RTAB-Map
+[rtabma Advanced Parameter Tuning Tutorial](http://wiki.ros.org/rtabmap_ros/Tutorials/Advanced%20Parameter%20Tuning)
+[List of RTAB-Map Parameters](https://github.com/introlab/rtabmap/blob/master/corelib/include/rtabmap/core/Parameters.h)
