@@ -74,5 +74,13 @@ Now configuring the RGB-D camera. In [my_robot.gazebo](), replaced the existing 
 ```
 
 
+## Launch File for RTAB-Map `mapping.launch`
+This mapping launch file acts as the main node that interfaces with all the required parts to be able to perform SLAM with RTAB-Map into the launch folder.
+ros topic required by rtabmap:
+
+* scan
+* rgb/image
+* depth/image
+* rgb/camera_info
 
 
