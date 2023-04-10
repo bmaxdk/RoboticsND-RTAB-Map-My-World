@@ -1,8 +1,8 @@
 # RoboticsND-RTAB-Map-My-World
-[image1]: img/a0.png "img1"
-[image2]: img/a1.png "img2"
-[image3]: img/a2.png "img3"
-[image4]: img/a3.png "img4"
+[image1]: image/a0.png "img1"
+[image2]: image/a1.png "img2"
+[image3]: image/a2.png "img3"
+[image4]: image/a3.png "img4"
 
 ## RTAB-Map (Real-Time Appearance-Based Mapping) 
 
