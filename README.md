@@ -1,5 +1,11 @@
 # RoboticsND-RTAB-Map-My-World
+[image1]: img/a0.png "img1"
+[image2]: img/a1.png "img2"
+[image3]: img/a2.png "img3"
+[image4]: img/a3.png "img4"
+
 RTAB-Map (Real-Time Appearance-Based Mapping) 
+![alt text][image1]
 
 2D occupancy grid and 3D octomap from a simulated environment using a robot with the [RTAB-Map](http://wiki.ros.org/rtabmap_ros) package. This project will be using the [`rtabmap`](http://wiki.ros.org/rtabmap_ros) package.
 
@@ -31,8 +37,10 @@ To launch RTAB-Map launch with mapping.launch or localization.launch file, open 
 ```bash
 $ source devel/setup.bash
 $ roslaunch my_robot localization.launch
-
+```
 For launching mapping.launch file. You may want to launch ros teloepkey
+
+![alt text][image2]
 
 ```bash
     ├── my_robot
@@ -65,7 +73,7 @@ For launching mapping.launch file. You may want to launch ros teloepkey
 
 ```
 
-
+![alt text][image3]
 
 
 ## Sensor update
@@ -228,7 +236,7 @@ To enable it for mapping, add this code snippet to the `mapping.launch` file. Th
         <remap from="scan"            to="/scan"/>
     </node>
 ```
-
+![alt text][image4]
 
 ## Mapping: Database Viewer
 ```bash
