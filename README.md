@@ -78,7 +78,7 @@ For launching mapping.launch file. You may want to launch ros teloepkey
 
 
 ## Sensor update
-In my [my_robot.xacro]() added optical camera link for RGB-D camera in URDF file. This extra link and an extra joint to the camera link in order to align the camera image in Gazebo properly with the robot. (The Parent link of `camera_optical_joint` should be properly configured to the original camera link)
+In my [my_robot.xacro](https://github.com/bmaxdk/RoboticsND-RTAB-Map-My-World/blob/main/catkin_ws/src/my_robot/urdf/my_robot.xacro) added optical camera link for RGB-D camera in URDF file. This extra link and an extra joint to the camera link in order to align the camera image in Gazebo properly with the robot. (The Parent link of `camera_optical_joint` should be properly configured to the original camera link)
 ```xacro
   <joint name="camera_optical_joint" type="fixed">
     <origin xyz="0 0 0" rpy="-1.5707 0 -1.5707"/>
@@ -90,7 +90,7 @@ In my [my_robot.xacro]() added optical camera link for RGB-D camera in URDF file
   </link>
 ```
 
-Now configuring the RGB-D camera. In [my_robot.gazebo](), replaced the existing camera and its shared object file to:
+Now configuring the RGB-D camera. In [my_robot.gazebo](https://github.com/bmaxdk/RoboticsND-RTAB-Map-My-World/blob/main/catkin_ws/src/my_robot/urdf/my_robot.gazebo), replaced the existing camera and its shared object file to:
 `libgazebo_ros_camera.so` to that of the Kinect shared object file, `libgazebo_ros_openni_kinect.so`. Updated the `<frameName>` to be the `camera_link_optical` link from abobe in `my_robot.xacro`. On top of this, additional parameters need to be set for the RGB-D camera as well as matching the topics published by the drivers of its real world counterpart.
 
 ```xacro
@@ -142,7 +142,7 @@ Now configuring the RGB-D camera. In [my_robot.gazebo](), replaced the existing 
 ```
 
 
-## Launch File for RTAB-Map `mapping.launch`
+## Launch File for RTAB-Map `[mapping.launch](https://github.com/bmaxdk/RoboticsND-RTAB-Map-My-World/blob/main/catkin_ws/src/my_robot/launch/mapping.launch)` and [localization.launch](https://github.com/bmaxdk/RoboticsND-RTAB-Map-My-World/blob/main/catkin_ws/src/my_robot/launch/localization.launch)
 This mapping launch file acts as the main node that interfaces with all the required parts to be able to perform SLAM with RTAB-Map into the launch folder.
 ros topic required by rtabmap:
 
@@ -248,7 +248,7 @@ rtabmap-databaseViewer ~/.ros/rtabmap.db
 * View -> Graph View
 
 
-## RTAB-Map Localization
+## RTAB-Map Localization [localization.launch](https://github.com/bmaxdk/RoboticsND-RTAB-Map-My-World/blob/main/catkin_ws/src/my_robot/launch/localization.launch)
 If you desire to perform localization using the map you created, there are only a few changes you need to make. You can start by duplicating your mapping.launch file and renaming the duplicated file tolocalization.launch.
 
 The following changes need to be made to the `localization.launch` file:
