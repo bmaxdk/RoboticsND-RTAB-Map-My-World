@@ -9,6 +9,53 @@ Toe setup the [RTAB-Map setup](http://wiki.ros.org/rtabmap_ros/Tutorials/SetupOn
 * Odometry sensors, providing nav_msgs/Odometry messages
 * 3D Camera, compatible with openni_launch, openni2_launch or freenect_launch ROS packages
 
+
+
+```bash
+    ├── my_robot
+    │   ├── CMakeLists.txt
+    │   ├── config
+    │   │   ├── base_local_planner_params.yaml
+    │   │   ├── costmap_common_params.yaml
+    │   │   ├── global_costmap_params.yaml
+    │   │   ├── local_costmap_params.yaml
+    │   │   └── __MACOSX
+    │   ├── launch
+    │   │   ├── amcl.launch
+    │   │   ├── localization.launch         #RTAB-Map Localization launch file
+    │   │   ├── mapping.launch
+    │   │   ├── robot_description.launch
+    │   │   └── world.launch
+    │   ├── maps
+    │   │   ├── map.pgm
+    │   │   └── map.yaml
+    │   ├── meshes
+    │   │   └── hokuyo.dae
+    │   ├── package.xml
+    │   ├── urdf
+    │   │   ├── my_robot.gazebo
+    │   │   └── my_robot.xacro
+    │   └── worlds
+    │       ├── cho_robot_world.world
+    │       └── robotl1_old.world
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Sensor update
 In my [my_robot.xacro]() added optical camera link for RGB-D camera in URDF file. This extra link and an extra joint to the camera link in order to align the camera image in Gazebo properly with the robot. (The Parent link of `camera_optical_joint` should be properly configured to the original camera link)
 ```xacro
@@ -169,3 +216,15 @@ To enable it for mapping, add this code snippet to the `mapping.launch` file. Th
         <remap from="scan"            to="/scan"/>
     </node>
 ```
+
+
+## RTAB-Map Localization
+If you desire to perform localization using the map you created, there are only a few changes you need to make. You can start by duplicating your mapping.launch file and renaming the duplicated file tolocalization.launch.
+
+The following changes need to be made to the `localization.launch` file:
+
+Remove the `args="--delete_db_on_start"` from your node launcher since you will need your database to localize too.
+
+Remove the `Mem/NotLinkedNodesKept` parameter
+
+Add the `Mem/IncrementalMemory` parameter of type `string` and set it to `false` to finalize the changes needed to put the robot into localization mode.
