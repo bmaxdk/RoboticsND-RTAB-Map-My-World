@@ -218,6 +218,15 @@ To enable it for mapping, add this code snippet to the `mapping.launch` file. Th
 ```
 
 
+## Mapping: Database Viewer
+```bash
+rtabmap-databaseViewer ~/.ros/rtabmap.db
+```
+* Say yes to using the database parameters
+* View -> Constraint View
+* View -> Graph View
+
+
 ## RTAB-Map Localization
 If you desire to perform localization using the map you created, there are only a few changes you need to make. You can start by duplicating your mapping.launch file and renaming the duplicated file tolocalization.launch.
 
