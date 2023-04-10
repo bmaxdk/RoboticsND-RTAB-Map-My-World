@@ -4,7 +4,8 @@
 [image3]: img/a2.png "img3"
 [image4]: img/a3.png "img4"
 
-RTAB-Map (Real-Time Appearance-Based Mapping) 
+## RTAB-Map (Real-Time Appearance-Based Mapping) 
+
 ![alt text][image1]
 
 2D occupancy grid and 3D octomap from a simulated environment using a robot with the [RTAB-Map](http://wiki.ros.org/rtabmap_ros) package. This project will be using the [`rtabmap`](http://wiki.ros.org/rtabmap_ros) package.
