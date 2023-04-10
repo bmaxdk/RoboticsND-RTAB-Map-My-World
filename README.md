@@ -11,6 +11,29 @@ Toe setup the [RTAB-Map setup](http://wiki.ros.org/rtabmap_ros/Tutorials/SetupOn
 
 
 
+#### Build and launch the environment for this setup
+With Gazebo and ROS installed, first need to create a catkin workspace.  clone the repository into the src directory:
+```bash
+$ git clone https://github.com/bmaxdk/RoboticsND-RTAB-Map-My-World.git
+$ cd catkin_ws/src
+$ catkin_init_workspace
+$ cd ..
+$ catkin_make
+```
+
+Next, you can open Gazebo with the robot in it:
+```bash
+$ source devel/setup.bash
+$ roslaunch my_robot world.launch
+```
+
+To launch RTAB-Map launch with mapping.launch or localization.launch file, open a new terminal and execute the following:
+```bash
+$ source devel/setup.bash
+$ roslaunch my_robot localization.launch
+
+For launching mapping.launch file. You may want to launch ros teloepkey
+
 ```bash
     ├── my_robot
     │   ├── CMakeLists.txt
@@ -23,7 +46,7 @@ Toe setup the [RTAB-Map setup](http://wiki.ros.org/rtabmap_ros/Tutorials/SetupOn
     │   ├── launch
     │   │   ├── amcl.launch
     │   │   ├── localization.launch         #RTAB-Map Localization launch file
-    │   │   ├── mapping.launch
+    │   │   ├── mapping.launch              #RTAB-Map mapping launch file
     │   │   ├── robot_description.launch
     │   │   └── world.launch
     │   ├── maps
@@ -32,26 +55,15 @@ Toe setup the [RTAB-Map setup](http://wiki.ros.org/rtabmap_ros/Tutorials/SetupOn
     │   ├── meshes
     │   │   └── hokuyo.dae
     │   ├── package.xml
-    │   ├── urdf
+    │   ├── urdf                            # My robot
     │   │   ├── my_robot.gazebo
     │   │   └── my_robot.xacro
     │   └── worlds
-    │       ├── cho_robot_world.world
+    │       ├── cho_robot_world.world      # My current world file
     │       └── robotl1_old.world
 
 
 ```
-
-
-
-
-
-
-
-
-
-
-
 
 
 
