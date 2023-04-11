@@ -38,10 +38,20 @@ $ source devel/setup.bash
 $ roslaunch my_robot world.launch
 ```
 
-To launch RTAB-Map launch with mapping.launch or localization.launch file, open a new terminal and execute the following:
+[Option1] To launch RTAB-Map launch with [localization.launch]() file, open a new terminal and execute the following:
 ```bash
 $ source devel/setup.bash
 $ roslaunch my_robot localization.launch
+```
+[Option2] To launch RTAB-Map with [mapping.launch]()
+```bash
+$ source devel/setup.bash
+$ roslaunch my_robot mapping.launch
+
+# Open New terminal for teleop.launch
+$ source devel/setup.bash
+$ roslaunch my_robot teleop.launch
+
 ```
 For launching mapping.launch file. You may want to launch ros teloepkey
 ![alt text][image33]
@@ -51,63 +61,66 @@ For launching mapping.launch file. You may want to launch ros teloepkey
 [rtabmap.db](https://github.com/bmaxdk/RoboticsND-RTAB-Map-My-World/blob/main/rtabmap.db) is located this link.
 ```bash
  src
-    ├── ball_chaser
-    │   ├── CMakeLists.txt
-    │   ├── launch
-    │   │   └── ball_chaser.launch
-    │   ├── package.xml
-    │   ├── src
-    │   │   ├── drive_bot.cpp
-    │   │   └── process_image.cpp
-    │   └── srv
-    │       └── DriveToTarget.srv
-    ├── CMakeLists.txt -> /opt/ros/noetic/share/catkin/cmake/toplevel.cmake
-    ├── my_robot
-    │   ├── CMakeLists.txt
-    │   ├── config
-    │   │   ├── base_local_planner_params.yaml
-    │   │   ├── costmap_common_params.yaml
-    │   │   ├── global_costmap_params.yaml
-    │   │   ├── local_costmap_params.yaml
-    │   │   └── __MACOSX
-    │   ├── launch
-    │   │   ├── amcl.launch
-    │   │   ├── localization.launch      #RTAB-Map Localization launchfile
-    │   │   ├── mapping.launch           #RTAB-Map mapping launch file
-    │   │   ├── robot_description.launch
-    │   │   └── world.launch
-    │   ├── maps
-    │   │   ├── map.pgm
-    │   │   └── map.yaml
-    │   ├── meshes
-    │   │   └── hokuyo.dae
-    │   ├── package.xml
-    │   ├── urdf
-    │   │   ├── my_robot.gazebo
-    │   │   └── my_robot.xacro
-    │   └── worlds                        # My robot
-    │       ├── cho_robot_world.world     # My current world file
-    │       └── robotl1_old.world
-    ├── teleop_twist_keyboard
-    │   ├── CHANGELOG.rst
-    │   ├── CMakeLists.txt
-    │   ├── package.xml
-    │   ├── README.md
-    │   └── teleop_twist_keyboard.py
-    └── whereami
-        ├── CMakeLists.txt
-        ├── config
-        │   ├── base_local_planner_params.yaml
-        │   ├── costmap_common_params.yaml
-        │   ├── global_costmap_params.yaml
-        │   ├── local_costmap_params.yaml
-        │   └── __MACOSX
-        ├── launch
-        │   └── amcl.launch
-        ├── maps
-        │   ├── map.pgm
-        │   └── map.yaml
-        └── package.xml
+├── ball_chaser
+│   ├── CMakeLists.txt
+│   ├── launch
+│   │   └── ball_chaser.launch
+│   ├── package.xml
+│   ├── src
+│   │   ├── drive_bot.cpp
+│   │   └── process_image.cpp
+│   └── srv
+│       └── DriveToTarget.srv
+├── CMakeLists.txt -> /opt/ros/noetic/share/catkin/cmake/toplevel.cmake
+├── my_robot
+│   ├── CMakeLists.txt
+│   ├── config
+│   │   ├── base_local_planner_params.yaml
+│   │   ├── costmap_common_params.yaml
+│   │   ├── global_costmap_params.yaml
+│   │   ├── local_costmap_params.yaml
+│   │   └── __MACOSX
+│   ├── launch
+│   │   ├── amcl.launch
+│   │   ├── localization.launch        #RTAB-Map Localization launchfile
+│   │   ├── mapping.launch
+│   │   ├── robot_description.launch   #RTAB-Map mapping launch file
+│   │   ├── teleop.launch              #telop.launch file
+│   │   └── world.launch
+│   ├── maps
+│   │   ├── map.pgm
+│   │   └── map.yaml
+│   ├── meshes
+│   │   └── hokuyo.dae
+│   ├── package.xml
+│   ├── urdf                            # My robot
+│   │   ├── my_robot.gazebo
+│   │   └── my_robot.xacro       
+│   └── worlds
+│       ├── cho_robot_world.world       # My current world file
+│       └── robotl1_old.world
+├── teleop_twist_keyboard
+│   ├── CHANGELOG.rst
+│   ├── CMakeLists.txt
+│   ├── package.xml
+│   ├── README.md
+│   └── teleop_twist_keyboard.py
+└── whereami
+    ├── CMakeLists.txt
+    ├── config
+    │   ├── base_local_planner_params.yaml
+    │   ├── costmap_common_params.yaml
+    │   ├── global_costmap_params.yaml
+    │   ├── local_costmap_params.yaml
+    │   └── __MACOSX
+    ├── launch
+    │   └── amcl.launch
+    ├── maps
+    │   ├── map.pgm
+    │   └── map.yaml
+    └── package.xml
+
+
 
 ```
 ![alt text][image44]
@@ -278,7 +291,7 @@ To enable it for mapping, add this code snippet to the `mapping.launch` file. Th
 
 ## Mapping: Database Viewer
 ```bash
-rtabmap-databaseViewer ~/.ros/rtabmap.db
+$ rtabmap-databaseViewer ~/.ros/rtabmap.db
 ```
 * Say yes to using the database parameters
 * View -> Constraint View
