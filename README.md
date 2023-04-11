@@ -63,7 +63,7 @@ $ rtabmap-databaseViewer ~/.ros/rtabmap.db
 * View -> Constraint View
 * View -> Graph View
 
-![alt text][image33]
+<!-- ![alt text][image33] -->
 ![alt text][image2]
 
 
@@ -306,6 +306,7 @@ $ rtabmap-databaseViewer ~/.ros/rtabmap.db
 * View -> Constraint View
 * View -> Graph View
 
+![alt text][image33]
 
 ## RTAB-Map Localization [localization.launch](https://github.com/bmaxdk/RoboticsND-RTAB-Map-My-World/blob/main/catkin_ws/src/my_robot/launch/localization.launch)
 If you desire to perform localization using the map you created, there are only a few changes you need to make. You can start by duplicating your mapping.launch file and renaming the duplicated file tolocalization.launch.
