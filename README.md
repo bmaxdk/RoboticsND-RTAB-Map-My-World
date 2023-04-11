@@ -51,9 +51,16 @@ $ roslaunch my_robot mapping.launch
 # Open New terminal for teleop.launch
 $ source devel/setup.bash
 $ roslaunch my_robot teleop.launch
-
 ```
-For launching mapping.launch file. You may want to launch ros teloepkey
+
+After save the config of rtabmap, launch Database Viewer
+```bash
+$ rtabmap-databaseViewer ~/.ros/rtabmap.db
+```
+* Say yes to using the database parameters
+* View -> Constraint View
+* View -> Graph View
+
 ![alt text][image33]
 ![alt text][image2]
 
@@ -85,7 +92,7 @@ For launching mapping.launch file. You may want to launch ros teloepkey
 │   │   ├── localization.launch        #RTAB-Map Localization launchfile
 │   │   ├── mapping.launch
 │   │   ├── robot_description.launch   #RTAB-Map mapping launch file
-│   │   ├── teleop.launch              #telop.launch file
+│   │   ├── teleop.launch              #teleop.launch file
 │   │   └── world.launch
 │   ├── maps
 │   │   ├── map.pgm
