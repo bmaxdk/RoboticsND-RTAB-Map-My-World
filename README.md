@@ -38,12 +38,12 @@ $ source devel/setup.bash
 $ roslaunch my_robot world.launch
 ```
 
-[Option1] To launch RTAB-Map launch with [localization.launch]() file, open a new terminal and execute the following:
+[Option1] To launch RTAB-Map launch with [localization.launch](https://github.com/bmaxdk/RoboticsND-RTAB-Map-My-World/blob/main/catkin_ws/src/my_robot/launch/localization.launch) file, open a new terminal and execute the following:
 ```bash
 $ source devel/setup.bash
 $ roslaunch my_robot localization.launch
 ```
-[Option2] To launch RTAB-Map with [mapping.launch]()
+[Option2] To launch RTAB-Map with [mapping.launch](https://github.com/bmaxdk/RoboticsND-RTAB-Map-My-World/blob/main/catkin_ws/src/my_robot/launch/mapping.launch) and [teleop.launch](https://github.com/bmaxdk/RoboticsND-RTAB-Map-My-World/blob/main/catkin_ws/src/my_robot/launch/teleop.launch)
 ```bash
 $ source devel/setup.bash
 $ roslaunch my_robot mapping.launch
