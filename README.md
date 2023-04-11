@@ -4,9 +4,13 @@
 [image3]: image/a2.png "img3"
 [image4]: image/a3.png "img4"
 
-## RTAB-Map (Real-Time Appearance-Based Mapping) 
+[image11]: image/a00.png "img11"
+[image22]: image/a11.png "img22"
+[image33]: image/a22.png "img33"
+[image44]: image/a33.png "img44"
 
-![alt text][image1]
+## RTAB-Map (Real-Time Appearance-Based Mapping) 
+![alt text][image22]
 
 2D occupancy grid and 3D octomap from a simulated environment using a robot with the [RTAB-Map](http://wiki.ros.org/rtabmap_ros) package. This project will be using the [`rtabmap`](http://wiki.ros.org/rtabmap_ros) package.
 
@@ -16,7 +20,7 @@ Toe setup the [RTAB-Map setup](http://wiki.ros.org/rtabmap_ros/Tutorials/SetupOn
 * Odometry sensors, providing nav_msgs/Odometry messages
 * 3D Camera, compatible with openni_launch, openni2_launch or freenect_launch ROS packages
 
-
+![alt text][image11]
 
 #### Build and launch the environment for this setup
 With Gazebo and ROS installed, first need to create a catkin workspace.  clone the repository into the src directory:
@@ -40,10 +44,22 @@ $ source devel/setup.bash
 $ roslaunch my_robot localization.launch
 ```
 For launching mapping.launch file. You may want to launch ros teloepkey
-
+![alt text][image33]
 ![alt text][image2]
 
 ```bash
+ src
+    ├── ball_chaser
+    │   ├── CMakeLists.txt
+    │   ├── launch
+    │   │   └── ball_chaser.launch
+    │   ├── package.xml
+    │   ├── src
+    │   │   ├── drive_bot.cpp
+    │   │   └── process_image.cpp
+    │   └── srv
+    │       └── DriveToTarget.srv
+    ├── CMakeLists.txt -> /opt/ros/noetic/share/catkin/cmake/toplevel.cmake
     ├── my_robot
     │   ├── CMakeLists.txt
     │   ├── config
@@ -54,8 +70,8 @@ For launching mapping.launch file. You may want to launch ros teloepkey
     │   │   └── __MACOSX
     │   ├── launch
     │   │   ├── amcl.launch
-    │   │   ├── localization.launch         #RTAB-Map Localization launch file
-    │   │   ├── mapping.launch              #RTAB-Map mapping launch file
+    │   │   ├── localization.launch      #RTAB-Map Localization launchfile
+    │   │   ├── mapping.launch           #RTAB-Map mapping launch file
     │   │   ├── robot_description.launch
     │   │   └── world.launch
     │   ├── maps
@@ -64,16 +80,35 @@ For launching mapping.launch file. You may want to launch ros teloepkey
     │   ├── meshes
     │   │   └── hokuyo.dae
     │   ├── package.xml
-    │   ├── urdf                            # My robot
+    │   ├── urdf
     │   │   ├── my_robot.gazebo
     │   │   └── my_robot.xacro
-    │   └── worlds
-    │       ├── cho_robot_world.world      # My current world file
+    │   └── worlds                        # My robot
+    │       ├── cho_robot_world.world     # My current world file
     │       └── robotl1_old.world
-
+    ├── teleop_twist_keyboard
+    │   ├── CHANGELOG.rst
+    │   ├── CMakeLists.txt
+    │   ├── package.xml
+    │   ├── README.md
+    │   └── teleop_twist_keyboard.py
+    └── whereami
+        ├── CMakeLists.txt
+        ├── config
+        │   ├── base_local_planner_params.yaml
+        │   ├── costmap_common_params.yaml
+        │   ├── global_costmap_params.yaml
+        │   ├── local_costmap_params.yaml
+        │   └── __MACOSX
+        ├── launch
+        │   └── amcl.launch
+        ├── maps
+        │   ├── map.pgm
+        │   └── map.yaml
+        └── package.xml
 
 ```
-
+![alt text][image44]
 ![alt text][image3]
 
 

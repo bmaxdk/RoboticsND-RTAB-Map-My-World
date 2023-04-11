@@ -43,17 +43,19 @@
       <!-- <param name="Kp/NNStrategy" type="string"  value="1"/>
       <param name="proj_max_height" type="string" value="2.0"/> -->
       <!-- <param name="Rtabmap/TimeThr"  type="string"  value="700"/> -->
-      <!-- <param name="cloud_noise_filtering_radius" type="string" value="0.05"/>
-      <param name="cloud_noise_filtering_min_neighbors" type="string" value="2"/> -->
+      <param name="cloud_noise_filtering_radius" type="string" value="0.05"/>
+      <param name="cloud_noise_filtering_min_neighbors" type="string" value="2"/>
       <param name="Optimizer/Slam2D" type="string" value="true" />
-      <param name="OdomF2M/MaxSize" type="string" value="80"/> 
-      <param name="Vis/MaxFeatures" type="string" value="80"/>
+      <param name="OdomF2M/MaxSize" type="string" value="120"/> 
+      <param name="Vis/MaxFeatures" type="string" value="90"/>
       <param name="Odom/Strategy" type="string"  value="1"/>
       <!-- Maximum visual words per image (bag-of-words) -->
-      <param name="Kp/MaxFeatures"  type="string" value="80"/>
-
+      <param name="Kp/MaxFeatures"  type="string" value="90"/>
+      <param name="Vis/CorType" type="string"  value="1"/>
       <!-- Used to extract more or less SURF features -->
-      <param name="SURF/HessianThreshold" type="string" value="110"/> 
+      <param name="SURF/HessianThreshold" type="string" value="1000"/> 
+      <param name="RGB/OptimizeFromGraphEnd" type="string" value="true"/> 
+
       <!-- <param name="SURF/HessianThreshold" type="string" value="100"/>  -->
 
       <!-- Loop Closure Constraint -->
@@ -61,18 +63,21 @@
       <param name="Reg/Strategy" type="string" value="0"/>
 
       <!-- Minimum visual inliers to accept loop closure -->
-      <param name="Vis/MinInliers" type="string" value="15"/>
+      <param name="Vis/MinInliers" type="string" value="7"/>
 
       <!-- Set to false to avoid saving data when robot is not moving -->
       <param name="Mem/IncrementalMemory" type="string" value="false"/>
     </node>
         
-    <node pkg="rtabmap_ros" type="rgbd_odometry" name="rgbd_odometry">
-      <param name="GFTT/MinDistance" type="string" value="30"/> <!-- default 5 pixels -->
+    <node pkg="rtabmap_ros" type="rgbd_odometry" name="rgbd_odometry" >
+      <param name="GFTT/MinDistance" type="string" value="55"/> <!-- default 5 pixels -->
+      <!-- <param name="Odom/ResetCountdown"  type="string"  value="1" /> -->
+      <!-- <param name="Reg/Force3DoF"  type="string"  value="true" /> -->
     </node>
-    <!-- <node pkg="rtabmap_ros" type="rgbd_odometry" name="rgbd_odometry">
-            <param name="Reg/Force3DoF"    value="true" />
+    <!-- <node pkg="rtabmap_ros" type="rtabmap" name="rtabmap">
+      <param name="Rtabmap/StartNewMapOnLoopClosure"  type="string"  value="true"/>
     </node> -->
+
 
 
 
