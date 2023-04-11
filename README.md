@@ -12,6 +12,8 @@
 ## RTAB-Map (Real-Time Appearance-Based Mapping) 
 ![alt text][image22]
 
+[image1]: image/RTAB_MAP.gif "Trained Agent"
+
 2D occupancy grid and 3D octomap from a simulated environment using a robot with the [RTAB-Map](http://wiki.ros.org/rtabmap_ros) package. This project will be using the [`rtabmap`](http://wiki.ros.org/rtabmap_ros) package.
 
 Toe setup the [RTAB-Map setup](http://wiki.ros.org/rtabmap_ros/Tutorials/SetupOnYourRobot), it recommended robot configuration requires:
