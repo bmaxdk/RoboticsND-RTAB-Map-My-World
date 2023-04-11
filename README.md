@@ -199,7 +199,7 @@ Now configuring the RGB-D camera. In [my_robot.gazebo](https://github.com/bmaxdk
 ```
 
 
-## Launch File for RTAB-Map `[mapping.launch](https://github.com/bmaxdk/RoboticsND-RTAB-Map-My-World/blob/main/catkin_ws/src/my_robot/launch/mapping.launch)` and [localization.launch](https://github.com/bmaxdk/RoboticsND-RTAB-Map-My-World/blob/main/catkin_ws/src/my_robot/launch/localization.launch)
+## Launch File for RTAB-Map [mapping.launch](https://github.com/bmaxdk/RoboticsND-RTAB-Map-My-World/blob/main/catkin_ws/src/my_robot/launch/mapping.launch) and [localization.launch](https://github.com/bmaxdk/RoboticsND-RTAB-Map-My-World/blob/main/catkin_ws/src/my_robot/launch/localization.launch)
 This mapping launch file acts as the main node that interfaces with all the required parts to be able to perform SLAM with RTAB-Map into the launch folder.
 ros topic required by rtabmap:
 
